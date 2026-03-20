@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "id": "unblob",
+  "name": "Unblob",
+  "hub_manifest": "https://github.com/nostalgia2812/.github/blob/claude/tooling-filing-system-uG7Gs/.tooling/tool_manifest.json",
+  "category": "firmware-analysis",
+  "subcategory": "binary-extraction",
+  "description": "Extract, parse, and analyze arbitrary binary blobs - firmware analysis tool",
+  "language": "Python",
+  "license": "MIT",
+  "maintainer": "nostalgia2812",
+  "status": "active",
+  "priority": "medium",
+  "install": {
+    "pip": "pip3 install unblob",
+    "docker": "docker pull ghcr.io/onekey-sec/unblob:latest",
+    "nix": "nix-shell -p unblob"
+  },
+  "health_check": "unblob --version",
+  "system_dependencies": ["lzop", "zstd", "lz4", "unar", "p7zip-full", "squashfs-tools"],
+  "supported_formats": 50,
+  "ci_integration": ".github/workflows/integration-tests.yml",
+  "documentation": "https://github.com/nostalgia2812/.github/blob/claude/tooling-filing-system-uG7Gs/TOOLS_INDEX.md#unblob",
+  "tags": ["firmware", "binary", "extraction", "analysis", "embedded", "iot", "medium"],
+  "related_tools": ["aircrack-ng"],
+  "use_cases": [
+    "IoT device firmware security analysis",
+    "Embedded system vulnerability research",
+    "Binary extraction and unpacking",
+    "Supply chain security analysis"
+  ],
+  "last_updated": "2026-03-20"
+}
