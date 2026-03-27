@@ -1,0 +1,20 @@
+{
+  "tool": "unblob",
+  "ghost_ai_version": "1.0.0",
+  "category": "Firmware Analysis",
+  "description": "Extract and analyze firmware blobs for embedded secrets, credentials, and attack surface",
+  "invocation": {
+    "command": "unblob",
+    "example": "unblob -e /tmp/ghost_firmware_extract firmware.bin"
+  },
+  "ghost_ai_workflow": [
+    {"step": 1, "desc": "unblob extracts firmware filesystem"},
+    {"step": 2, "desc": "Gitleaks scans extracted files for hardcoded secrets"},
+    {"step": 3, "desc": "TruffleHog scans for credentials"},
+    {"step": 4, "desc": "Ghost AI summarizes firmware attack surface"}
+  ],
+  "params": {
+    "firmware_path": "Path to firmware binary file",
+    "extract_dir": "Output directory for extracted filesystem"
+  }
+}
